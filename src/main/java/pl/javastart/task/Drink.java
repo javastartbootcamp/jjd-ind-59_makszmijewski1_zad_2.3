@@ -1,71 +1,47 @@
 package pl.javastart.task;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Drink {
     private String name;
     private double price;
     private boolean isAlkohol;
-    private ArrayList<Component> components;
+    private Component component1;
+    private Component component2;
+    private Component component3;
 
-    public Drink(String name, double price, boolean isAlkohol, ArrayList<Component> components) {
+    public Drink(String name, double price, boolean isAlkohol, Component component1, Component component2, Component component3) {
         this.name = name;
         this.price = price;
         this.isAlkohol = isAlkohol;
-        this.components = components;
+        this.component1 = component1;
+        this.component2 = component2;
+        this.component3 = component3;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public double getPrice() {
         return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
     }
 
     public boolean isAlkohol() {
         return isAlkohol;
     }
 
-    public void setAlkohol(boolean alkohol) {
-        isAlkohol = alkohol;
+    public Component getComponent1() {
+        return component1;
     }
 
-    public ArrayList<Component> getComponents() {
-        return components;
+    public Component getComponent2() {
+        return component2;
     }
 
-    public void setComponents(ArrayList<Component> components) {
-        this.components = components;
+    public Component getComponent3() {
+        return component3;
     }
 
-    public void showComponents()
-    {
-        for (Component component : components) {
-            System.out.println(component.getName());
-        }
-    }
-    public int calculateCapacity()
-    {
-        int capacity = 0;
-        for (Component component : components) {
-            capacity = capacity + component.getQuantity();
-        }
-        return capacity;
-    }
-    public void showInfo(){
-        System.out.println("Drink: " + name);
-        System.out.println("Cena: " + price + "zł");
-        System.out.println("Czy zawiera alkohol? " + isAlkohol);
-        showComponents();
-        System.out.println("Pojemność: " + calculateCapacity() + "ml");
-    }
 }
